@@ -1,0 +1,29 @@
+1
+
+function isValidTriangle(int $a, int $b, int $c): bool
+{
+    return  ($a + $b) > $c and ($a + $c) > $b and ($b + $c) > $a;
+}
+
+
+
+
+2
+
+SELECT  user.name, COUNT(post.post_id) as cnt
+FROM post
+LEFT JOIN user on user.user_id = post.user_id
+WHERE user.user_id IS NOT null
+GROUP BY post.user_id, user.name
+ORDER BY cnt DESC
+LIMIT 10;
+
+
+
+3
+
+на сколько я помню, браузеры блокируют такие окна, если привязываться к загрузке страницы с таймаутом
+
+document.getElementById("popupButton").addEventListener("click", function () {
+    setTimeout(50,window.open("https://www.ya.ru/", "popup", "width=640,height=480"));
+});
